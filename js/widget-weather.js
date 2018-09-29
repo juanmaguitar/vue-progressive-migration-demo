@@ -6,6 +6,7 @@ const DEFAULT_QUERY='Barcelona'
 new Vue({
   el: "#widget",
   data: {
+    message: 'sdsdsdf',
     query: DEFAULT_QUERY,
     temp: 0,
     temp_max: 0,
