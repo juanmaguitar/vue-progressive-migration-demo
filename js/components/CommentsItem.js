@@ -32,5 +32,3 @@ Vue.component('comments-item', {
   },
   template: templateCommentsItem
 })
-
-// '<p v-on:click="usernameClicked">{{ username }}</p>',
