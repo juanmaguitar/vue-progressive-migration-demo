@@ -25,5 +25,15 @@ new Vue({
   el: "#comments_block",
   data: {
     comments: comments_data
+  },
+  methods: {
+    addComment: function({ username, comment }) {
+      comments_data.push({
+        id: comments_data.length + 1,
+        username,
+        comment,
+        date: "Today ..."
+      })
+    }
   }
 })
