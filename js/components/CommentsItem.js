@@ -5,7 +5,7 @@ const templateCommentsItem = `
         alt="avatar"></a>
   </div>
   <div class="comment-content col-md-11 col-sm-10">
-    <h6 class="small comment-meta"><a href="#">{{ username }}</a> {{ date }}</h6>
+    <h6 class="small comment-meta"><a href="#">{{ username }}</a> {{ formattedTime }}</h6>
     <div class="comment-body">
       <p>{{ comment }}</p>
     </div>
@@ -15,6 +15,10 @@ const templateCommentsItem = `
 `
 
 Vue.component('comments-item', {
+  data: function () {
+    const formattedTime = moment(this.date).fromNow()
+    return { formattedTime }
+  },
 	props: {
     comment: {
       type: String,
