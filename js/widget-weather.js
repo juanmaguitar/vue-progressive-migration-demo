@@ -1,3 +1,5 @@
+import WeatherApiService from './services/WeatherApiService.js'
+
 const API_KEY = '627eb53a00b46c56672e5fef2aa41986'
 const service = new WeatherApiService(API_KEY)
 
