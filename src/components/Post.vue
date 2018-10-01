@@ -1,25 +1,5 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Blog Template for Bootstrap</title>
-
-  <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-    crossorigin="anonymous">
-
-  <!-- Custom styles for this template -->
-  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
-  <link href="css/main.css" rel="stylesheet">
-</head>
-
-<body>
-
+<template>
+  <div>
   <div class="container">
     <header class="blog-header py-3">
       <div class="row flex-nowrap justify-content-between align-items-center">
@@ -97,10 +77,10 @@
           <p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
         </div><!-- /.blog-post -->
       
-        <div class="comments" id="comments_block">
+        <!-- <div class="comments" id="comments_block">
             <comments-form @add-comment="addComment($event)"></comments-form>
             <comments-list :comments="comments"></comments-list>
-        </div>
+        </div> -->
 
     </div>
 
@@ -111,7 +91,7 @@
           fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
       </div>
 
-      <div class="p-3 mb-3 bg-light rounded" id="widget">
+      <!-- <div class="p-3 mb-3 bg-light rounded" id="widget">
         <h4 class="font-italic">Temperatura</h4>
         <p>{{ message }}</p>
         <select v-model="query" v-on:change="findWeather">
@@ -120,7 +100,7 @@
           <option>Murcia</option>
         </select>
         <p>Temp: {{ temp }} | Max: {{ temp_max }} | Min: {{ temp_min }}</p>
-      </div>
+      </div> -->
 
       <div class="p-3">
         <h4 class="font-italic">Archives</h4>
@@ -161,24 +141,6 @@
     </p>
   </footer>
 
+</div>
 
-  <!-- VUE -->
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-  <!-- HELPER LIBRARIES -->
-  <script src="https://cdn.jsdelivr.net/npm/axios@0.18.0/dist/axios.min.js"></script>
-  <script src="https://momentjs.com/downloads/moment.js"></script>
-  <script src="js/helpers/index.js"></script>
-
-  <!-- SERVICES -->
-  <script src="js/WeatherApiService.js"></script>
-
-  <!-- VUE APP -->
-  <script src="js/widget-weather.js"></script> 
-  <script src="js/components/CommentsItem.js"></script>
-  <script src="js/components/CommentsList.js"></script>
-  <script src="js/components/CommentsForm.js"></script>
-  <script src="js/widget-comments.js"></script>
-</body>
-
-</html>
+</template>
