@@ -11,7 +11,12 @@
             From the Firehose
           </h3>
 
-          <BlogPost />
+          <BlogPost 
+            title="Sample blog post"
+            date="June 14th, 2017"
+            author="juanma"
+            :content="content" 
+          />
           <CommentsForm @add-comment="addComment($event)"/>
           <CommentsList :comments="comments"/>          
 
@@ -83,12 +88,14 @@ import CommentsForm from '../components/CommentsForm'
 import CommentsList from '../components/CommentsList'
 
 import comments_data from '../data/comments.js'
+import content_post from '../data/content_post.js'
 
 export default {
   name: 'Home',
   data: function() {
-   return {
-    comments: comments_data
+    return {
+      comments: comments_data,
+      content: content_post
     } 
   },
   methods: {

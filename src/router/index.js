@@ -1,0 +1,21 @@
+import Vue from 'vue'
+import Router from 'vue-router'
+
+Vue.use(Router)
+
+import Home from '../pages/Home.vue'
+import Post from '../pages/Post.vue'
+
+export default new Router({
+  mode: 'history',
+  routes: [
+    {
+      path: '/home',
+      component: Home
+    }, 
+    {
+      path: '/post',
+      component: Post
+    }
+  ]
+})

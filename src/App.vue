@@ -1,17 +1,22 @@
 <template>
   <div id="app">
-    <Post />
+    <nav>
+      <ul>
+        <li>
+          <router-link to="/home">Home</router-link>
+        </li>
+        <li>
+          <router-link to="/post">Post</router-link>
+        </li>
+      </ul>
+    </nav>
+     <router-view></router-view>
   </div>
 </template>
 
 <script>
-//import Home from './pages/Home.vue'
-import Post from './pages/Post.vue'
 
 export default {
-  name: 'app',
-  components: {
-    Post
-  }
+  name: 'App'
 }
 </script>
