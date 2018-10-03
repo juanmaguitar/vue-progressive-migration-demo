@@ -11,6 +11,6 @@ export default new Router({
   routes: [
     { path: '/', component: Home }, 
     { path: '/home', component: Home }, 
-    { path: '/post', component: Post }
+    { name:'PostDetails', path: '/post/:id', component: Post }
   ]
 })

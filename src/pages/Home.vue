@@ -3,14 +3,15 @@
     <div class="container">
 
       <Header />
-      <LongFeatured />
+      <!-- <LongFeatured /> -->
 
       <div class="row mb-2">
-        <div class="col-md-6">
-          <FeaturedPost />
-        </div>
-        <div class="col-md-6">
-          <FeaturedPost />
+        <div 
+          v-for="article in articles" 
+          :key="article.key" 
+          class="col-md-6"
+        > 
+          <FeaturedPost :article="article"/> 
         </div>
       </div>
     </div>
@@ -23,12 +24,14 @@
 
 <script>
 import Header from '../components/Header'
-import LongFeatured from '../components/LongFeatured'
 import FeaturedPost from '../components/FeaturedPost'
 import Footer from '../components/Footer'
 
 export default {
   name: 'Home',
-  components: { Header, LongFeatured, FeaturedPost, Footer }
+  computed: {
+    articles: function() { return this.$root.$data.articles } 
+  },
+   components: { Header, FeaturedPost, Footer }
 }
 </script>
