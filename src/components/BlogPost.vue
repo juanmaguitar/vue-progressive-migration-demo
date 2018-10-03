@@ -8,9 +8,6 @@
  
  <script>
 export default {
-  created: function () {
-    console.log(this.content)
-  },
   props: {
     title: String,
     author: String,

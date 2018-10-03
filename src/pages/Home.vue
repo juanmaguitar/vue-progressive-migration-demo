@@ -5,13 +5,13 @@
       <Header />
       <!-- <LongFeatured /> -->
 
-      <div class="row mb-2">
+      <div class="row mb-2" v-if="articles">
         <div 
-          v-for="article in articles" 
-          :key="article.key" 
+          v-for="id in keys" 
+          :key="id" 
           class="col-md-6"
         > 
-          <FeaturedPost :article="article"/> 
+          <FeaturedPost :id="id" :article="articles[id]"/> 
         </div>
       </div>
     </div>
@@ -27,11 +27,20 @@ import Header from '../components/Header'
 import FeaturedPost from '../components/FeaturedPost'
 import Footer from '../components/Footer'
 
+import NewsApiService from '../services/NewsApiService.js'
+
 export default {
   name: 'Home',
-  computed: {
-    articles: function() { return this.$root.$data.articles } 
+  asyncComputed: {
+    async articles() {  
+      return await NewsApiService.getArticles()
+    },
+    async keys () {  
+      return await NewsApiService
+                .getArticles()
+                .then(articles => Object.keys(articles))
+    }  
   },
-   components: { Header, FeaturedPost, Footer }
+  components: { Header, FeaturedPost, Footer }
 }
 </script>
