@@ -1,7 +1,7 @@
 import uuidv4 from 'uuid/v4'
 import moment from 'moment'
 
-export default [
+const comments = [
   {
     id: uuidv4(),
     username: "juanma",
@@ -23,3 +23,5 @@ export default [
     comment: "Sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo."
   }
 ]
+
+export default comments
