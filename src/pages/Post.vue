@@ -3,8 +3,8 @@
     <div class="container">
       <Header />
     </div>
-
-    <main role="main" class="container">
+    
+    <main role="main" class="container" v-if="article">
       <div class="row">
         <div class="col-md-8 blog-main">
           <h3 class="pb-3 mb-4 font-italic border-bottom">
@@ -12,14 +12,13 @@
           </h3>
 
           <BlogPost 
-            :img="article.urlToImage"
             :title="article.title"
             :date="article.publishedAt"
             :author="article.author"
             :content="article.content" 
           />
           <CommentsForm @add-comment="addComment($event)"/>
-          <CommentsList :comments="comments"/>          
+          <CommentsList v-if="article.comments" :comments="article.comments"/>          
 
           <nav class="blog-pagination">
             <a class="btn btn-outline-primary" href="#">Older</a>
@@ -88,28 +87,31 @@ import Footer from '../components/Footer'
 import CommentsForm from '../components/CommentsForm'
 import CommentsList from '../components/CommentsList'
 
-import comments_data from '../data/comments.js'
-import content_post from '../data/content_post.js'
+// import comments_data from '../data/comments.js'
+
+import NewsApiService from '../services/NewsApiService.js'
 
 export default {
-  name: 'Home',
+  name: 'Post',
   data: function() {
-    console.log(this.$root.$data.articles)
-    console.log(this.$route.params.id)
     return {
-      comments: comments_data,
-      content: content_post,
-      article: this.$root.$data.articles.filter( ({ key }) => key === this.$route.params.id)[0]
-    } 
+      idArticle: this.$route.params.id
+    }
+  },
+  asyncComputed: {
+    async article() {  
+      return NewsApiService.getArticle(this.idArticle)
+    }  
   },
   methods: {
     addComment: function({ username, comment }) {
-      comments_data.push({
+      const commentData = {
         id: uuidv4(),
         username,
         comment,
         date: moment().valueOf()
-      })
+      }
+      NewsApiService.addComment(this.idArticle, commentData)
     }
   },
   components: { Header, BlogPost, Widget, Footer, WidgetTemperature, CommentsForm, CommentsList }
