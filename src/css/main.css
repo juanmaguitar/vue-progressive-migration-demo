@@ -127,3 +127,12 @@ h1, h2, h3, h4, h5, h6 {
 .comments_form, .comments {
   margin-bottom: 50px;
 }
+
+.featured-post-content {
+  width: 70%;
+}
+
+.featured-post-image {
+  object-fit: cover;
+  width: 30%;
+}
