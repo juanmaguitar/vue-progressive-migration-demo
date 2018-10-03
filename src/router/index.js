@@ -9,13 +9,8 @@ import Post from '../pages/Post.vue'
 export default new Router({
   mode: 'history',
   routes: [
-    {
-      path: '/home',
-      component: Home
-    }, 
-    {
-      path: '/post',
-      component: Post
-    }
+    { path: '/', component: Home }, 
+    { path: '/home', component: Home }, 
+    { path: '/post', component: Post }
   ]
 })
