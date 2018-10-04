@@ -31,7 +31,7 @@
 export default {
   props: ['addComment'],
   data: function() {
-  	return {
+    return {
       username: '',
       comment: ''
     }
