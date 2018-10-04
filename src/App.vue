@@ -6,9 +6,6 @@
 
 <script>
 
-import NewsApiService from './services/NewsApiService.js'
-const DEFAULT_QUERY = 'javascript'
-
 export default {
   name: 'App'
 }
