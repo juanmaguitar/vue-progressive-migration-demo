@@ -1,4 +1,28 @@
+
 # VueJs Progressive Migration
 
-SPA → https://dist-bfqsopyopf.now.sh
-SSR → https://demo-nuxt-zwrmciloos.now.sh/
+- SPA → https://dist-bfqsopyopf.now.sh
+- SSR → https://demo-nuxt-zwrmciloos.now.sh/
+
+# demo-nuxt
+
+> My groovy Nuxt.js project
+
+## Build Setup
+
+``` bash
+# install dependencies
+$ yarn install
+
+# serve with hot reload at localhost:3000
+$ yarn run dev
+
+# build for production and launch server
+$ yarn run build
+$ yarn start
+
+# generate static project
+$ yarn run generate
+```
+
+For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
